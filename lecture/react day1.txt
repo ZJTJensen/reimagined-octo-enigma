@@ -1,0 +1,14 @@
+Intro to react
+
+Front End framerwork.
+Our server is now giving us back json elements.
+
+Dependicies: Babel (compiler that will let us use the latest ech that javascript has to 
+offer in our code.)
+
+React and ReactDOM (React itself will allow us to create components and a plethora of other 
+features where reactDom is what will allow us to render these on the web page.
+
+Basic Setup
+
+Using the cdn links for babel and the such for simplicites sake. 
