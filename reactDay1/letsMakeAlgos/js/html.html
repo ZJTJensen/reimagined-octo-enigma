@@ -1,0 +1,84 @@
+<style>
+    #right-catagories-rosary{
+        display: inline-block;
+        width:100;
+    }
+    .padding{
+        padding: 10px 0 0 20px;
+    }
+    #testRosary{
+        padding: 0;
+    }
+</style>
+<div id="right-catagories-rosary">
+<h3 id="clickme"><span id="arrow"><i class="fa fa-angle-down"></i></span> CATEGORY</h3>
+<ul id="testRosary" style="list-style-type: none;"></ul>
+<script type="text/javascript" xml="space">// <![CDATA[
+// 
+    var count = 0;
+require(['jquery'], function($){
+    $( "#clickme" ).click(function() {
+        count++;
+        if(count== 0){
+            document.getElementById("arrow").innerHTML = '<i class="fa fa-angle-down"></i>';
+        }
+        else if (count %2 != 0 ){
+            document.getElementById("arrow").innerHTML = '<i class="fa fa-angle-up"></i>';
+        }else{
+            document.getElementById("arrow").innerHTML = '<i class="fa fa-angle-down"></i>';
+        }
+    $( "#testRosary" ).slideToggle( "slow", function() {
+        // Animation complete.
+        
+    });
+    });
+});
+let rosaries= {
+    subject: "rosaries",
+    names: ["all-rosaries", "birthstone-rosaries","cases-boxes", 
+    "czech-glass-rosaries", "fatima-rosaries", "handcrafted-heirlooms",
+    "holy-mass-rosaries"],
+    deff: ["All Rosaries", "Birthstone Rosaries", "Cases/Boxes",
+    "Czech Glass rosaries", "Fatima Rosaries", "Handcrafted Heirlooms",
+    "Holy Mass rosaries"]
+}
+
+
+
+
+let gifts= {
+    subject: "gifts",
+    names: ["trinity-dome", "agnus-dei-farms", "monastery-food-gifts","basilica-favorite-gifts",
+    "birthstone-gifts", "immaculate-waters", "inspirational-gifts", "lladro", "olive-wood-holy-land",
+    "shrine-gifts", "special-gifts"],
+    deff: ["Trinity Dome", "Agnus Dei Farms", "Monastery Food and Gifts", "Basilica Favorite Gifts",
+    "Birthstone Gifts", "Immaculate Waters", "Inspirational Gifts", "Lladro", "Olive Wood Holy Land",
+    "Shrine Gifts", "Special Gifts"]
+}
+
+var x = location.pathname;
+if(x.includes(rosaries.subject)){
+    var list = "";
+   for(i = 0; i< rosaries.names.length; i++){
+        if(x.includes(rosaries.names[i])){
+        
+             list +='<li class ="padding"> <b><a style="color:black; text-decoration:none" href="https://www.nationalshrineshops.com/'+ rosaries.subject+'/'+rosaries.names[i] + '">'+rosaries.deff[i] + '</a></b></li>'
+           
+     
+        }else{
+        
+             list +='<li class ="padding"> <a style="color:black; text-decoration:none" href="https://www.nationalshrineshops.com/'+ rosaries.subject+'/'+rosaries.names[i] + '">'+rosaries.deff[i] + '</a></li>'
+       
+        }
+   }
+   require(['jquery'], function($){
+   $('#testRosary').append(list);
+    });
+
+}
+require(['jquery'], function($){
+ $('#right-catagories-rosary').insertBefore('.column.main');
+});
+//
+// ]]></script>
+</div>
